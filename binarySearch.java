@@ -2,8 +2,8 @@ class binarySearch{
     public static int binarySearch(int nums[], int key){
         int start =0,end = nums.length-1;
         
-        while(start<=end){
-            int mid = (start + end) / 2;
+        while(start<=end){     
+            int mid = (start + end) / 2;            //you can also use start + (end - start) / 2; to avoid overflow
             
             //Comparisons
             if(nums[mid] == key){
