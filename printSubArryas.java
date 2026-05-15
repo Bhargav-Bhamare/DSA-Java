@@ -1,13 +1,21 @@
 class printSubArryas {
     public static void printSubArrays(int nums[]){
         int tpp = 0;
+        
         for(int i=0;i<nums.length;i++){
             int start=i;
+            
             for(int j=i;j<nums.length;j++){
+                int sum = 0;
                 int end=j;
                 for(int k=start;k<=end;k++){
+                    
                     System.out.print(nums[k]+" ");
+                    sum+=nums[k];
                 }
+                //To Print the sum
+                System.out.print("Sum:"+ sum);
+                
                 tpp++;
                 System.out.println();
             }
