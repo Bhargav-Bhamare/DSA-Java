@@ -1,5 +1,5 @@
 class Diamond {
-    public static void Diamond(int n){
+    public static void DiamondPatt(int n){
         //Outer loop
         for(int i=1;i<=n;i++){
             //spaces
@@ -26,6 +26,6 @@ class Diamond {
         }
     }
     public static void main(String[] args){
-        Diamond(5);
+        DiamondPatt(5);
     }
 }

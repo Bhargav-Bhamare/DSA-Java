@@ -1,5 +1,5 @@
 class Butterfly {
-    public static void Butterfly(int n){
+    public static void ButterflyPatt(int n){
         //outer loop
         for(int i = 1;i<=n;i++){
         //stars =i
@@ -35,6 +35,6 @@ class Butterfly {
         }
     }
     public static void main(String[] args){
-        Butterfly(12);
+        ButterflyPatt(12);
     }
 }

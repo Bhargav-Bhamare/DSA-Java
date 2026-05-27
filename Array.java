@@ -12,7 +12,7 @@ class Array{
     }
 }
 
-class Array{
+class Array1{
     public static void updateMarks(int marks[]){
         for(int i=0;i<marks.length;i++){
             marks[i]=marks[i]+1;

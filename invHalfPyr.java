@@ -1,5 +1,5 @@
 class invHalfPyr {
-    public static void invHalfPyr(int n){
+    public static void invHalfPyra(int n){
         //outer loop
         for(int i = 1;i<=n;i++){
             //innerloop
@@ -10,6 +10,6 @@ class invHalfPyr {
         }
     }
     public static void main(String[] args){
-        invHalfPyr(4);
+        invHalfPyra(4);
     }
 }
