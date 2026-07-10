@@ -1,3 +1,4 @@
+package Pattern;
 class RevHalfPyr {
     public static void RhalfPyr(int n){
         //outer loop

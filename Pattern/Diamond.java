@@ -1,3 +1,4 @@
+package Pattern;
 class Diamond {
     public static void DiamondPatt(int n){
         //Outer loop

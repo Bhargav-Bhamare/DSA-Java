@@ -1,3 +1,4 @@
+package Pattern;
 class invHalfPyr {
     public static void invHalfPyra(int n){
         //outer loop

@@ -1,3 +1,4 @@
+package Pattern;
 class Butterfly {
     public static void ButterflyPatt(int n){
         //outer loop

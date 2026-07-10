@@ -1,3 +1,4 @@
+package Pattern;
 class floydTriangle {
     public static void Pyr(int n){
         //outer loop
