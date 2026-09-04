@@ -1,6 +1,6 @@
 package Backtracking;
 
-public class gridProb {
+public class gridProb { //Time Complexity too high
     public static int gridWays(int i, int j,int n, int m){
         //Base Case
         if(i == n-1 && j == m-1){ //Last Cell
@@ -17,3 +17,7 @@ public class gridProb {
         System.out.println("Total Number of ways: "+gridWays(0, 0, n, m));
     }
 }
+
+//To find Total Ways,there can be a simpler approach with less T.C
+//It uses permutation and combinatons
+//(n-1 + m-1)! / (n-1)!(m-1)!
