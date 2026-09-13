@@ -1,3 +1,5 @@
+package LinkedList;
+
 public class LinkedList {
 
     public static class Node{
@@ -35,6 +37,15 @@ public class LinkedList {
         tail = newNode;
     }
 
+    public void print(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
 
     public static void main(String[] args) {
        LinkedList ll = new LinkedList();
@@ -43,5 +54,7 @@ public class LinkedList {
        ll.addFirst(1);
        ll.addLast(4);
        ll.addLast(5);
+
+       ll.print();
     }
 }
