@@ -13,7 +13,7 @@ public class LinkedList {
     public static Node head;
     public static Node tail;
 
-    public void addFirst(int data){
+    public void addFirst(int data){ //T.C = O(1)
         //1.Create new Node
         Node newNode = new Node(data);
         if(head == null){
@@ -25,7 +25,7 @@ public class LinkedList {
         //3. Head = newNode
         head = newNode;
     }
-    public void addLast(int data){
+    public void addLast(int data){  //T.C = O(1)
         Node newNode = new Node(data);
         if(head == null){
             head = tail = newNode;
