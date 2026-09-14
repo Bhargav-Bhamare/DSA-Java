@@ -69,6 +69,20 @@ public class LinkedList {
         temp.next = newNode;
     }
 
+    public int removeFirst(){
+        if(size == 0){
+            System.out.println("LL is Empty");
+            return Integer.MIN_VALUE;
+        }else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+        int val = head.data;
+        head = head.next;  //IMP LINE
+        return val;
+    }
+
 
     public static void main(String[] args) {
        LinkedList ll = new LinkedList();
