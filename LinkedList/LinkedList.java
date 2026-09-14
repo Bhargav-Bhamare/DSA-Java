@@ -69,6 +69,8 @@ public class LinkedList {
         temp.next = newNode;
     }
 
+    //Removing Elements from Linked List
+
     public int removeFirst(){
         if(size == 0){
             System.out.println("LL is Empty");
@@ -104,6 +106,24 @@ public class LinkedList {
         tail = prev;
         size--;
         return val;
+    }
+
+    //Searching for a key
+
+    public int itrSearch(int key){
+        Node temp = head;
+        int i = 0;
+         
+        while(temp != null){
+            if(temp.data == key){ //Key Found
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+
+        //KEy not Found
+        return -1;
     }
 
 
