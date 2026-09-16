@@ -189,6 +189,26 @@ public class LinkedList {
     }
 
 
+    public boolean hasCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast != null){
+            if(fast == slow){
+                return true;
+            }
+            }else{
+                return false;
+            }
+        }
+
+        return false;
+    }
+
+
     public static void main(String[] args) {
        LinkedList ll = new LinkedList();
        ll.addFirst(4);
