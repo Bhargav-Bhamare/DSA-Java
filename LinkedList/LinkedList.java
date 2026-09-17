@@ -188,7 +188,7 @@ public class LinkedList {
         return;
     }
 
-
+    //Detecting cycle in a linked list
     public boolean hasCycle(Node head) {
         Node fast = head;
         Node slow = head;
