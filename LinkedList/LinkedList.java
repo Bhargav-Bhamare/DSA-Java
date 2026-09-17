@@ -243,6 +243,24 @@ public class LinkedList {
         prev.next = null;
     }
 
+    //Merge Sort on LL
+    public Node mergeSort(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        //Find Mid
+        Node mid = getMid(head);
+        //Left and Right MS
+        Node rightHead = mid.next;
+        mid.next = null;
+        Node newLeft = mergeSort(head);
+        Node newRight = mergeSort(rightHead);
+
+        //Merge
+        return merge(newLeft, newRight);
+    }
+
 
     public static void main(String[] args) {
        LinkedList ll = new LinkedList();
