@@ -208,6 +208,41 @@ public class LinkedList {
         return false;
     }
 
+    //Removing a Cycle (1.Cycle? Yes -> make slow = head again)
+    //1. find last node
+    //2. last node.next = null
+
+    public static void removeCycle(){
+        //Detect Cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                cycle = true;
+                break;
+            }
+        }
+        if(cycle = false){
+            return;
+        }
+
+        //Find meeting point
+        slow = head;
+        Node prev = null; //Last Node
+        while(slow != fast){
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        //Remove Cycle -> last.next = null
+        prev.next = null;
+    }
+
 
     public static void main(String[] args) {
        LinkedList ll = new LinkedList();
