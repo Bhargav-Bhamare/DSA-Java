@@ -89,6 +89,9 @@ public class DoublyLL {
         dll.removeFirst();
         dll.print();
         System.out.println(dll.size);
+
+        dll.reverse();
+        dll.print();
     }
 }
 
