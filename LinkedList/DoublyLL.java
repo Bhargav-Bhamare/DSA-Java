@@ -16,7 +16,7 @@ public class DoublyLL {
     public static Node tail;
     public static int size;
 
-    //Add
+    //Add Node in DLL
     public void addFirst(int data){
         Node newNode = new Node(data);
         size++;
@@ -28,5 +28,14 @@ public class DoublyLL {
         newNode.next = head;
         head.prev = newNode;
         head = newNode;
+    }
+
+    //Print DLL
+    public void print(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data + "<->");
+        }
+        System.out.println("null");
     }
 }
