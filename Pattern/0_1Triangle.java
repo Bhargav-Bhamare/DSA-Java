@@ -1,4 +1,5 @@
-class 0_1Triangle {
+package Pattern;
+class Triangle {
     public static void Pyr(int n){
         //outer loop
         

@@ -1,3 +1,4 @@
+package LeetCode;
 public class twoSum {
     
     public static void twoSumProb(int[] nums, int target) {
