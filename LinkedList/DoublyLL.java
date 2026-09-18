@@ -14,7 +14,7 @@ public class DoublyLL {
     }
     public static Node head;
     public static Node tail;
-    public static int size;
+    public int size;
 
     //Add Node in DLL
     public void addFirst(int data){
@@ -59,6 +59,19 @@ public class DoublyLL {
         return val;
     }
 
+    public static void main(String[] args) {
+        DoublyLL dll = new DoublyLL();
+        dll.addFirst(3);
+        dll.addFirst(2);
+        dll.addFirst(1);
+
+        dll.print();
+        System.out.println(dll.size);
+
+        dll.removeFirst();
+        dll.print();
+        System.out.println(dll.size);
+    }
 }
 
 
