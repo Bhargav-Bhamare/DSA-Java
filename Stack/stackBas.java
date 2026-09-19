@@ -1,6 +1,6 @@
 package Stack;
 import java.util.*;
-
+//Stack using arraylist
 public class stackBas {
     static class Stack{
         static ArrayList<Integer> list = new ArrayList<>();
