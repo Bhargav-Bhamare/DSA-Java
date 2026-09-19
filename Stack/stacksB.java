@@ -27,5 +27,24 @@ public class stacksB {
             newNode.next = head;
             head = newNode;
         }
+
+        //Pop
+        public static int pop(){
+            if(isEmpty()){
+                return -1;
+            }
+            int top = head.data;
+            head = head.next;
+            return top;
+        }
+
+        //Peek
+        public static int peek(){
+            if(isEmpty()){
+                return -1;
+            }
+            return head.data;
+        }
     }
+    
 }
