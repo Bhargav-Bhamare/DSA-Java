@@ -10,7 +10,9 @@ public class Ques {
                 if(j == i){
                     count++;
                 }
-                System.out.print(count);
+            }
+            if(count > high){
+                return i;
             }
         }
         return 1;
