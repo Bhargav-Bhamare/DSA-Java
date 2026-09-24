@@ -1,11 +1,22 @@
 package LeetCode;
-//Question 231
-//Used Bit Manipulation to check if the number is a power of 2
-
 public class Ques {
-    
-    public boolean isPowerOfTwo(int n) {
-        return n > 0 && (n & (n - 1)) == 0;
+    public static int majorityElement(int[] nums) {
+        int n = nums.length;
+        int high = n /2;
+        for(int i = 0;i< n;i++){
+            int count = 0;
+            count++;
+            for(int j=i+1;j<n;j++){
+                if(j == i){
+                    count++;
+                }
+                System.out.print(count);
+            }
+        }
+        return 1;
     }
-    
+    public static void main(String[] args) {
+        int nums[] = {3,2,3};
+        majorityElement(nums);
+    }
 }
