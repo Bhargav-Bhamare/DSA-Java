@@ -83,7 +83,7 @@ public class histogram {
 //                 s.pop();
 //             }
 //             if(s.isEmpty()){
-//                 nsr[i] = heights.length;
+//                 nsl[i] = -1;
 //             }else{
 //                 nsr[i] = s.peek();
 //             }
