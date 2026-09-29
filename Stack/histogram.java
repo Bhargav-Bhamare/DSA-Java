@@ -10,23 +10,6 @@ import java.util.*;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class histogram {
     public static void maxArea(int arr[]){
         int maxArea = 0;
