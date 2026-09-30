@@ -179,7 +179,7 @@ public class LinkedList {
         //sz-n
         int i = 1;
         int iToFind = sz -n;
-        Node prev = head;;
+        Node prev = head;
         while(i < iToFind){
             prev = prev.next;
             i++;
