@@ -24,6 +24,18 @@ public class queueArr {
             rear = rear + 1;
             arr[rear] = data;
         }
+        //Removing an Element --> O(n)
+        public static int remove(){
+            if(isEmpty()){
+                System.out.println("Queue is Empty");
+                return -1;
+            }
+            int front = arr[0];
+            for(int i = 0;i<rear;i++){
+                arr[i] = arr[i+1];
+            }
+            return front;
+        }
 
 
     }
