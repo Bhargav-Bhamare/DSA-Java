@@ -46,6 +46,15 @@ public class queueLL {
             }
             return front;
         }
+
+        //Peek
+        public static int peek(){
+            if(isEmpty()){
+                System.out.println("Empty Queue");
+                return -1;
+            }
+            return head.data;
+        }
     }
 
 
