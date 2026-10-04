@@ -16,12 +16,12 @@ public class queueLL {
         static Node tail = null;
 
         //isEmpty
-        public static boolean isEmpty(){
+        public boolean isEmpty(){
             return head == null & tail == null;
         }
 
         //Add
-        public static void add(int data){
+        public void add(int data){
             Node newNode = new Node(data);
             if(head == null){
                 head = tail = newNode;
@@ -32,7 +32,7 @@ public class queueLL {
         }
 
         //Remove
-        public static int remove(){
+        public int remove(){
             if(isEmpty()){
                 System.out.println("Empty Queue");
                 return -1;
@@ -48,7 +48,7 @@ public class queueLL {
         }
 
         //Peek
-        public static int peek(){
+        public int peek(){
             if(isEmpty()){
                 System.out.println("Empty Queue");
                 return -1;
@@ -56,6 +56,16 @@ public class queueLL {
             return head.data;
         }
     }
+    public static void main(String[] args) {
+        Queue q = new Queue();
+        q.add(1);
+        q.add(2);
+        q.add(3);
 
+        while(!q.isEmpty()){
+            System.out.println(q.peek());
+            q.remove();
+        }
+    }
 
 }
