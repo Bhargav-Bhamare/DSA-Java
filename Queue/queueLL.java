@@ -30,6 +30,22 @@ public class queueLL {
             tail.next = newNode;
             tail = newNode;
         }
+
+        //Remove
+        public static int remove(){
+            if(isEmpty()){
+                System.out.println("Empty Queue");
+                return -1;
+            }
+            int front = head.data;
+            //Single Element
+            if(tail == head){
+                tail = head = null;
+            }else{
+                head = head.next;
+            }
+            return front;
+        }
     }
 
 
