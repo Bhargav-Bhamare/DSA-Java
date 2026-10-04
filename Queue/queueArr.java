@@ -36,7 +36,17 @@ public class queueArr {
             }
             return front;
         }
+        //Printing Peek Element
+        public static int peek(){
+            if(isEmpty()){
+                System.out.println("Queue is Empty");
+                return -1;
+            }
+            return arr[0];
+        }
+    }
 
-
+    public static void main(String[] args) {
+        
     }
 }
