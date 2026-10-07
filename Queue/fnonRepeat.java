@@ -23,4 +23,8 @@ public class fnonRepeat {
         }
         System.out.println();
     }
+    public static void main(String[] args) {
+        String str= "aabccxb";
+        printNonRepeating(str);
+    }
 }
