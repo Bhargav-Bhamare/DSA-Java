@@ -1,6 +1,6 @@
 package Sorting_Algorithms;
 
-public class mSort{
+public class mSort{ // Time: O(nLogn) Space: O(n)
 
     //Merge Method to merge the sorted parts 
     public static void merge(int arr[], int si, int mid, int ei){
@@ -26,6 +26,10 @@ public class mSort{
         //for remaining leftover elements of 2nd part
         while(i<= mid){
             temp[k++] = arr[i++];
+        }
+        //Copy temp to original array
+        for(k=0,i=si;k<temp.length;k++,i++){
+            arr[i] = temp[k];
         }
     }
 
