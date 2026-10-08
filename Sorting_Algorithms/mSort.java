@@ -24,8 +24,8 @@ public class mSort{ // Time: O(nLogn) Space: O(n)
             temp[k++] = arr[i++];
         }
         //for remaining leftover elements of 2nd part
-        while(i<= mid){
-            temp[k++] = arr[i++];
+        while(j<= ei){
+            temp[k++] = arr[j++];
         }
         //Copy temp to original array
         for(k=0,i=si;k<temp.length;k++,i++){
@@ -45,6 +45,10 @@ public class mSort{ // Time: O(nLogn) Space: O(n)
     }
     public static void main(String[] args) {
         int arr[] = {6, 3, 9, 5, 2, 8};
-        // printArr(arr);
+        mergeSort(arr, 0, 5);
+        for(int i =0;i< arr.length;i++){
+            System.out.print(arr[i]+ " ");
+        }
+        System.out.println();
     }
 }
