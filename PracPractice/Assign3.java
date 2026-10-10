@@ -98,6 +98,5 @@ public class Assign3{
         }
 
         sc.close();
-    
     }
 }
