@@ -20,8 +20,19 @@ public class Assign6 {
             }
         }
         //Diagonal Left Up
-        for(int i = row-1,j=col-1;)
-    }
+        for(int i = row-1,j=col-1;i>=0 && j>=0;i--,j--){
+            if(board[i][j] == 'Q'){
+                return false;
+            }
+        }
+        //Diagonal Right Up
+        for(int i = row-1,j=col+1;i>=0 && j<board.length;i--,j--){
+            if(board[i][j] == 'Q'){
+                return false;
+            }
+        }
+        return true;
+    }    
     public static void nQueens(char board[][], int row){
         if(row == board.length){
             printBoard(board);
