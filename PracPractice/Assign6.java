@@ -12,6 +12,16 @@ public class Assign6 {
             System.out.println();
         }
     }
+    public static boolean isSafe(char board[][], int row, int col){
+        //Vertical Up
+        for(int i = row-1;i>=0;i--){
+            if(board[i][col] == 'Q'){
+                return false;
+            }
+        }
+        //Diagonal Left Up
+        for(int i = row-1,j=col-1;)
+    }
     public static void nQueens(char board[][], int row){
         if(row == board.length){
             printBoard(board);
