@@ -2,7 +2,7 @@ package PracPractice;
 import java.util.*;
 
 public class Assign3{
-    
+    //Strassen matric Multiplication
     static int[][] multiply(int[][] A, int[][] B, int n) {
         int[][] C = new int[n][n];
 

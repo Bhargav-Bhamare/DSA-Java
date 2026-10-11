@@ -1,5 +1,7 @@
 package PracPractice;
 
+import java.util.ArrayList;
+
 public class prac {
 
     //Tower of hanoi
@@ -19,8 +21,28 @@ public class prac {
         // for(int i =0;i< arr.length;i++){
         //     System.out.print(arr[i]+" ");
         // }
+        //System.out.println();
+        int start[] ={1, 3, 0, 5, 8, 5};
+        int end[] = {2, 4, 6, 7, 9, 9};
+
+        int maxAct = 0;
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        maxAct = 1;
+        ans.add(0);
+        int lastEndTime = end[0];
+        for(int i = 0;i<end.length;i++){
+            if(start[i] >= lastEndTime){
+                //Select the activity
+                maxAct++;
+                ans.add(i);
+                lastEndTime = end[i];
+            }
+        }
+        System.out.println("Max Activities: " + maxAct);
+        for(int i = 0;i< ans.size();i++){
+            System.out.println("A"+ans.get(i));
+        }
         System.out.println();
-        int n  =2;
-        towerOfHanoi(n, "A", "B","C");
     }
 }
