@@ -48,3 +48,104 @@ public class Assign6 {
     }
     
 }
+
+
+//Vertex colour Question 
+
+static int n = 4;
+
+static int colors = 3;
+
+
+
+static int[][] graph = {
+
+    {0, 1, 1, 1},
+
+    {1, 0, 1, 0},
+
+    {1, 1, 0, 1},
+
+    {1, 0, 1, 0}
+
+};
+
+
+
+static int[] color = new int[n];
+
+
+
+static boolean isSafe(int v, int c) {
+
+    for (int i = 0; i < n; i++) {
+
+        if (graph[v][i] == 1 && color[i] == c)
+
+            return false;
+
+    }
+
+    return true;
+
+}
+
+
+
+static boolean solve(int v) {
+
+    if (v == n)
+
+        return true;
+
+
+
+    for (int c = 1; c <= colors; c++) {
+
+        if (isSafe(v, c)) {
+
+            color[v] = c;
+
+
+
+            if (solve(v + 1))
+
+                return true;
+
+
+
+            color[v] = 0;
+
+        }
+
+    }
+
+
+
+    return false;
+
+}
+
+
+
+public static void main(String[] args) {
+
+    if (solve(0)) {
+
+        System.out.println("Vertex\tColor");
+
+
+
+        for (int i = 0; i < n; i++)
+
+            System.out.println(i + "\t" + color[i]);
+
+    } else {
+
+        System.out.println("Solution does not exist.");
+
+    }
+
+}
+
+
