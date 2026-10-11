@@ -16,7 +16,7 @@ public class Assign5_1 {
         }
 
         // ascending order
-        Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
+        // Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
 
         int capacity = W;
         int finalVal = 0;
