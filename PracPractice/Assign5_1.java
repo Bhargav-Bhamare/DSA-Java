@@ -1,4 +1,5 @@
 package PracPractice;
+import java.util.Arrays;
 //Fractional Knapsack Problem
 public class Assign5_1 {
     public static void main(String args[]) {
