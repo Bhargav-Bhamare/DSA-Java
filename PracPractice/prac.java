@@ -2,38 +2,25 @@ package PracPractice;
 
 public class prac {
 
-    //Quick Sort
-    public static int partition(int arr[], int si,int ei){
-        int pivot = arr[ei];
-        int i = si -1;
-        for(int j = si;j< ei;j++){
-            if(arr[j] <= pivot){
-                i++;
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
-            }
-        }
-        i++;
-        int temp = pivot;
-        arr[ei] = arr[i];
-        arr[i] = temp;
-        return i;
-    }
-    public static void quickSort(int arr[], int si, int ei){
-        if(si >= ei){
+    //Tower of hanoi
+    public static void towerOfHanoi(int n, String src, String helper, String dest){
+        if(n == 1){
+            System.out.println("Move Disk "+n+" from "+ src+" to "+dest);
             return;
         }
-        int pIdx = partition(arr,si,ei);
-        quickSort(arr, si, pIdx-1);
-        quickSort(arr, pIdx+1, ei);
+        towerOfHanoi(n-1, src, dest, helper);
+        System.out.println("Move Disk "+n+" from "+ src+" to "+dest);
+        towerOfHanoi(n-1, helper,src, dest);
     }
+
     public static void main(String[] args) {
         int arr[] = {4,1,2,6,9};
-        quickSort(arr, 0, 4);
-        for(int i =0;i< arr.length;i++){
-            System.out.print(arr[i]+" ");
-        }
+        
+        // for(int i =0;i< arr.length;i++){
+        //     System.out.print(arr[i]+" ");
+        // }
         System.out.println();
+        int n  =2;
+        towerOfHanoi(n, "A", "B","C");
     }
 }
