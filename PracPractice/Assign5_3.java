@@ -1,5 +1,5 @@
 package PracPractice;
-
+//Matrix Chain Multiplication in Java
 public class Assign5_3 {
     public static void main(String[] args) {
         int[] p = {10, 20, 30, 40, 30};
@@ -13,8 +13,7 @@ public class Assign5_3 {
                 dp[i][j] = Integer.MAX_VALUE;
 
                 for (int k = i; k < j; k++) {
-                    int cost = dp[i][k] + dp[k + 1][j]
-                             + p[i - 1] * p[k] * p[j];
+                    int cost = dp[i][k] + dp[k + 1][j] + p[i - 1] * p[k] * p[j];
 
                     dp[i][j] = Math.min(dp[i][j], cost);
                 }
