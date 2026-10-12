@@ -1,6 +1,6 @@
 package PracPractice;
 
-
+//0/1 Knapsack Problem in Java
 public class Assign5_2 {
     public static void main(String[] args) {
         int[] weight = {1, 3, 4, 5};
