@@ -13,8 +13,7 @@ public class Assign5_2 {
         for (int i = 1; i <= n; i++) {
             for (int w = 1; w <= capacity; w++) {
                 if (weight[i - 1] <= w)
-                    dp[i][w] = Math.max(profit[i - 1] +
-                        dp[i - 1][w - weight[i - 1]], dp[i - 1][w]);
+                    dp[i][w] = Math.max(profit[i - 1] + dp[i - 1][w - weight[i - 1]], dp[i - 1][w]);
                 else
                     dp[i][w] = dp[i - 1][w];
             }
