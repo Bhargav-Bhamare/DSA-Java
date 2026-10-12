@@ -1,6 +1,6 @@
 package PracPractice;
 
-
+//Strassen's Matrix Multiplication in Java
 
 public class Assign3 {
     static int[][] mul(int[][] a, int[][] b) {
