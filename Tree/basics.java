@@ -64,7 +64,7 @@ public class basics {
         }
 
         //Level Order traversal
-        public static void levelOrder(Node root){
+        public void levelOrder(Node root){
             if(root == null){
                 return;
             }
@@ -107,5 +107,9 @@ public class basics {
         System.out.println();
         System.out.println("Postorder Traversal : ");
         tree.postorder(root);
+        System.out.println();
+        System.out.println("Level Order Traversal : ");
+        tree.levelOrder(root);
+        System.out.println();
     }
 }
