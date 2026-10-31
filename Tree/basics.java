@@ -25,6 +25,16 @@ public class basics {
         return Math.max(lh,rh)+1;
     }
 
+    public int count(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int leftCount = count(root.left);
+        int rightCount = count(root.right);
+        return leftCount + rightCount + 1 ;
+    }
+
     static class BinaryTree{
         private int idx;
 
@@ -120,5 +130,8 @@ public class basics {
         System.out.println("Level Order Traversal : ");
         tree.levelOrder(root);
         System.out.println();
+
+        System.out.println("Height of the tree : "+new basics().height(root));
+        System.out.println("Count of Nodes in the tree: "+new basics().count(root));
     }
 }
