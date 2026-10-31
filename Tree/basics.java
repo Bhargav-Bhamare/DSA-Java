@@ -61,6 +61,9 @@ public class basics {
             postorder(root.right);
             System.out.print(root.data+" ");
         }
+
+        //Level Order traversal
+        
     }
 
     public static void main(String[] args) {
