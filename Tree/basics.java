@@ -35,6 +35,16 @@ public class basics {
         return leftCount + rightCount + 1 ;
     }
 
+    public int sum(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int lsum = sum(root.left);
+        int rsum = sum(root.right);
+        return lsum + rsum + root.data;
+    }
+
     static class BinaryTree{
         private int idx;
 
