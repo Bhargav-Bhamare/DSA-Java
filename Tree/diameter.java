@@ -15,7 +15,7 @@ public class diameter {
             this.right = null;
         }
     }
-    public int height(Node root){
+    public static int height(Node root){
         if(root == null){
             return 0;
         }
@@ -45,18 +45,20 @@ public class diameter {
         }
     }
 
-    public staitc int diameter(Node root){ //O(n^2)
+    public static int diameter2(Node root){ //O(n^2)
         if(root == null){
             return 0;
         }
-        int leftDiam = diameter(root.left);
+        int leftDiam = diameter2(root.left);
         int leftHt = height(root.left);
-        int rightDiam = diameter(root.right);
-        int rightHt = diameter(root.right);
-
+        int rightDiam = diameter2(root.right);
+        int rightHt = height(root.right);
+        
         int selfDiam = leftHt + rightHt + 1;
         return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
     }
+
+    public Info(int diam, int ht)
 
     public static void main(String[] args) {
         
