@@ -45,6 +45,8 @@ public class basics {
         return lsum + rsum + root.data;
     }
 
+    
+
     static class BinaryTree{
         private int idx;
 

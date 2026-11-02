@@ -3,7 +3,7 @@ package Tree;
 
 public class diameter {
     //Node class
-    public class Node{
+    public static class Node{
         int data;
         Node left;
         Node right;
@@ -58,7 +58,29 @@ public class diameter {
         return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
     }
 
-    public Info(int diam, int ht)
+    public static class Info{
+        int diam;
+        int ht;
+
+        public Info(int diam,int ht){
+            this.diam = diam;
+            this.ht = ht;
+        }
+    }
+
+    public static Info diameter1(Node root){
+        if(root == null){
+            return new Info(0,0);
+        }
+        Info leftInfo = diameter1(root.left);
+        Info rightInfo = diameter1(root.right);
+
+        int diam = Math.max(Math.max(leftInfo.diam, rightInfo.diam), leftInfo.ht + rightInfo.ht + 1);
+        int ht = Math.max(leftInfo.ht, rightInfo.ht) + 1;
+
+
+        return new Info(diam,ht);
+    }
 
     public static void main(String[] args) {
         
