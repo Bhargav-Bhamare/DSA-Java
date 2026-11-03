@@ -58,7 +58,8 @@ public class diameter {
         int selfDiam = leftHt + rightHt + 1;
         return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
     }
-
+    
+    //Optimized Approach for Diameter
     public static class Info{
         int diam;
         int ht;
@@ -68,7 +69,7 @@ public class diameter {
             this.ht = ht;
         }
     }
-
+    
     public static Info diameter1(Node root){
         if(root == null){
             return new Info(0,0);
