@@ -45,6 +45,7 @@ public class diameter {
         }
     }
 
+    //Diameter of a tree is the maximum distance between any two nodes in a tree.
     public static int diameter2(Node root){ //O(n^2)
         if(root == null){
             return 0;
