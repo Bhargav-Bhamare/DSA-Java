@@ -147,6 +147,23 @@ public class topView {
         return lca;
     }
 
+    //Transform tree in Sum tree
+    public static int transform(Node root){
+        if(root == null){
+            return 0;
+        }
+        int leftChild = transform(root.left);
+        int rightChild = transform(root.right);
+
+        int data = root.data;
+
+        int newLeft = root.left == null ? 0: root.left.data;
+        int newRight = root.right == null ? 0: root.right.data;
+
+        root.data = newLeft + leftChild + newRight + rightChild;
+        return data;
+    }
+
 
     public static void main(String[] args) {
         /*
@@ -170,5 +187,7 @@ public class topView {
     System.out.println();
     int n1 = 4, n2 =6;
     System.out.println(lca(root, n1, n2).data);
+
+    
     }
 }
