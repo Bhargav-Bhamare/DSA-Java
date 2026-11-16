@@ -29,7 +29,7 @@ public class basic {
             return;
         }
         inorderTrav(root.left);
-        System.out.print(root.data+"-");
+        System.out.print(root.data+" ");
         inorderTrav(root.right);
     }
 
@@ -48,8 +48,43 @@ public class basic {
         }else{
             return search(root.left, key);
         }
-        
     }
+
+    //Deleting A Node from BST
+    public static Node delete(Node root, int val){
+        if(root.data < val){
+            root.right = delete(root.right, val);
+        }else if(root.data > val){
+            root.left = delete(root.left, val);
+        }else{
+            //This is the Node we want to Delete
+            //Case 1
+            if(root.right == null && root.left == null){
+                return null;
+            }
+
+            //Case 2 : One Child
+            if(root.left == null){
+                return root.right;
+            }else if(root.right == null){
+                return root.left;
+            }
+
+            //Case 3: 2 Childrens
+            Node IS = findInOrderSuccessor(root.right);
+            root.data = IS.data;
+            root.right = delete(root.right, IS.data);
+        }
+        return root;
+    }
+
+    public static Node findInOrderSuccessor(Node root){
+        while(root.left != null){
+            root = root.left;
+        }
+        return root;
+    }
+
 
     public static void main(String[] args) {
         int vals[] = {5, 1, 3, 4, 2, 7};
@@ -60,11 +95,14 @@ public class basic {
             root = insert(root, vals[i]);
         }
 
-        System.out.print("Inorder:");
+        System.out.print("Inorder: ");
         inorderTrav(root);
         System.out.println();
 
-        System.out.println(search(root, 9));
+        root = delete(root,4 );
+        
+        System.out.print("Inorder: ");
+        inorderTrav(root);
     }
     
 }
