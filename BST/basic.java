@@ -1,5 +1,7 @@
 package BST;
 
+import java.util.ArrayList;
+
 public class basic {
     public static class Node {
         int data;
@@ -77,7 +79,7 @@ public class basic {
         }
         return root;
     }
-
+    //Utility Function for deletion
     public static Node findInOrderSuccessor(Node root){
         while(root.left != null){
             root = root.left;
@@ -85,9 +87,46 @@ public class basic {
         return root;
     }
 
+    //Print in range
+    public static void printInRange(Node root, int k1, int k2){
+        if(root == null){
+            return ;
+        }
+        if(root.data >= k1 && root.data <= k2){
+            printInRange(root.left, k1, k2);
+            System.out.print(root.data+" ");
+            printInRange(root.right, k1, k2);
+        }else if(root.data < k1){
+            printInRange(root.left, k1, k2);
+        }else{
+            printInRange(root.right, k1, k2);
+        }
+    }
+
+    //Root to leaf Paths
+    public static void rootToLeaf(Node root, ArrayList<Integer> path){
+        if(root == null){
+            return;
+        }
+        path.add(root.data);
+        if(root.left == null && root.right == null){
+            printPath(path);
+        }
+        rootToLeaf(root.left, path);
+        rootToLeaf(root.right, path);
+        path.remove(path.size()-1);        
+    }
+
+    public static void printPath(ArrayList<Integer> path){
+        for(int i =0;i<path.size();i++){
+            System.out.print(path.get(i)+" ");
+        }
+        System.out.println("-Null");
+    }
+
 
     public static void main(String[] args) {
-        int vals[] = {5, 1, 3, 4, 2, 7};
+        int vals[] = {8, 5, 3, 6, 10 ,11, 14};
 
         Node root = null;
 
@@ -99,10 +138,12 @@ public class basic {
         inorderTrav(root);
         System.out.println();
 
-        root = delete(root,4 );
+        // root = delete(root,4 );
         
-        System.out.print("Inorder: ");
-        inorderTrav(root);
+        // System.out.print("Inorder: ");
+        // inorderTrav(root);
+
+        rootToLeaf(root, new ArrayList<>());
     }
     
 }
