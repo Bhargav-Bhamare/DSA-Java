@@ -29,7 +29,7 @@ public class basic {
             return;
         }
         inorderTrav(root.left);
-        System.out.print(root.data);
+        System.out.print(root.data+"-");
         inorderTrav(root.right);
     }
 
