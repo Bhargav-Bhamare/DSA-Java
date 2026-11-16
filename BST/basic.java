@@ -10,7 +10,7 @@ public class basic {
             this.data = data;
         }
     }
-
+    //Insertion in BST
     public static Node insert(Node root, int val){
         if(root == null){
             root = new Node(val);
@@ -23,7 +23,7 @@ public class basic {
         }
         return root;
     }
-
+    //Inorder Traversal
     public static void inorderTrav(Node root){
         if(root == null){
             return;
@@ -31,6 +31,24 @@ public class basic {
         inorderTrav(root.left);
         System.out.print(root.data+"-");
         inorderTrav(root.right);
+    }
+
+    //Search in BST
+    public static boolean search(Node root, int key){
+        if(root == null){
+            return false;
+        }
+
+        if(root.data == key){
+            return true;
+        }
+
+        if(root.data < key){
+            return search(root.right, key);
+        }else{
+            return search(root.left, key);
+        }
+        
     }
 
     public static void main(String[] args) {
@@ -42,7 +60,11 @@ public class basic {
             root = insert(root, vals[i]);
         }
 
+        System.out.print("Inorder:");
         inorderTrav(root);
+        System.out.println();
+
+        System.out.println(search(root, 9));
     }
     
 }
