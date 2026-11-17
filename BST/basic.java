@@ -34,6 +34,16 @@ public class basic {
         System.out.print(root.data+" ");
         inorderTrav(root.right);
     }
+    //preorder Traversal
+    public static void preOrderTrav(Node root){
+        if(root == null){
+            return;
+        }
+        System.out.print(root.data+" ");
+        inorderTrav(root.left);      
+        inorderTrav(root.right);
+    }
+
 
     //Search in BST
     public static boolean search(Node root, int key){
@@ -138,6 +148,19 @@ public class basic {
         return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
     }
 
+    //Mirror a BST
+    public static Node createMirror(Node root){
+        if(root == null){
+            return null;
+        }
+        Node leftSubTree = createMirror(root.left);
+        Node rightSubTree = createMirror(root.right);
+        //Swap
+        root.left = rightSubTree;
+        root.right = leftSubTree;
+
+        return root;
+    }
 
 
     public static void main(String[] args) {
@@ -149,8 +172,8 @@ public class basic {
             root = insert(root, vals[i]);
         }
 
-        System.out.print("Inorder: ");
-        inorderTrav(root);
+        System.out.print("Preorder: ");
+        preOrderTrav(root);
         System.out.println();
 
         // root = delete(root,4 );
@@ -158,11 +181,14 @@ public class basic {
         // System.out.print("Inorder: ");
         // inorderTrav(root);
 
-        if(isValidBST(root, null, null)){
-            System.out.println("Valid BST");
-        }else{
-            System.out.println("Invalid BST");
-        }
+        // if(isValidBST(root, null, null)){
+        //     System.out.println("Valid BST");
+        // }else{
+        //     System.out.println("Invalid BST");
+        // }
+
+        root = createMirror(root);
+        preOrderTrav(root);
     }
     
 }
