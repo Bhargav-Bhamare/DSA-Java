@@ -174,18 +174,84 @@ public class basic {
         return root;
     }
 
+    //BST to Balanced BST ------> O(n)
+    public static void findInOrder(Node root,ArrayList<Integer> inorder){
+        if(root == null){
+            return;
+        }
+        findInOrder(root.left, inorder);
+        inorder.add(root.data);
+        findInOrder(root.right, inorder);
+    }
+    public static Node makeBST(ArrayList<Integer> inorder, int st, int end){
+        if(st > end){
+            return null;
+        }
+        int mid = (st + end)/2;
+        Node root = new Node(inorder.get(mid));
+        root.left = makeBST(inorder, st, mid-1);
+        root.right = makeBST(inorder, mid+1, end);
+        return root;
+    } 
+    
+    public static Node toBalanced(Node root){
+        if(root == null){
+            return null;
+        }
+        //Inorder Seq
+        ArrayList<Integer> arr = new ArrayList<>();
+        findInOrder(root, arr);
+        //Sorted inorder -> BST
+        root = makeBST(arr, 0, arr.size()-1);
+        return root;
+
+    }
+
+    //Largest BST in a BST
+    static class Info{
+        boolean isBST;
+        int size;
+        int min;
+        int max;
+        public Info(boolean isBST, int size, int min, int max){
+            this.isBST = isBST;
+            this.size = size;
+            this.min = min;
+            this.max = max;
+        }
+    }
+    public static int maxBST = 0;
+    public static Info largestBST(Node root){
+        Info leftInfo = largestBST(root.left);
+        Info rightInfo = largestBST(root.right);
+        int size = leftInfo.size + rightInfo.size + 1;
+        int min = Math.min(root.data, Math.min(leftInfo.min , rightInfo.min));
+        int max = Math.max(root.data, Math.max(leftInfo.max , rightInfo.max));
+
+        if(root.data <= leftInfo.max || root.data >= rightInfo.min){
+            return new Info(false, size,min,max);
+        }
+
+        if(leftInfo.isBST && rightInfo.isBST){
+            maxBST = Math.max(maxBST,size);
+            return new Info(true, size, min, max);
+        }
+        return new Info(false, size, min, max);
+
+    }
+
     public static void main(String[] args) {
-        // int vals[] = {8, 5, 3, 6, 10 ,11, 14};
+        int vals[] = {8, 5, 3, 6, 10 ,11, 14};
 
-        // Node root = null;
+        Node root = null;
 
-        // for(int i = 0;i< vals.length;i++){
-        //     root = insert(root, vals[i]);
-        // }
+        for(int i = 0;i< vals.length;i++){
+            root = insert(root, vals[i]);
+        }
 
-        // System.out.print("Preorder: ");
-        // preOrderTrav(root);
-        // System.out.println();
+        System.out.print("Preorder: ");
+        preOrderTrav(root);
+        System.out.println();
 
         // root = delete(root,4 );
         
@@ -201,9 +267,9 @@ public class basic {
     //     root = createMirror(root);
     //     preOrderTrav(root);
 
-        int arr[] = {3, 5, 6, 8, 10, 11, 12};
-        Node root = createBST(arr, 0, arr.length - 1);
-        preOrderTrav(root);
+        // int arr[] = {3, 5, 6, 8, 10, 11, 12};
+        // Node root = createBST(arr, 0, arr.length - 1);
+        // preOrderTrav(root);
      }
     
 }
